@@ -460,3 +460,90 @@ ul, ol {
     color: white;
     font-size: 20px;
 }
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #444;
+    margin: 0;
+}
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+}
+.rope {
+    width: 70%;
+    height: 5px;
+    background-color: #8B5A2B;
+    position: relative;
+    border-radius: 50% 50% 0 0;
+    transition: all 0.5s ease-in-out;
+}
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
+}
+.photo {
+    width: 180px;
+    height: auto;
+    background-color: white;
+    border: 15px solid white;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: rotate(var(--angle));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.photo:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5);
+}
+.photo img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+}
+.photo p {
+    font-size: 14px;
+    text-align: center;
+    margin: 8px 0 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.photo:hover p {
+    opacity: 1;
+}
+.clip {
+    width: 25px;
+    height: 35px;
+    background-color: #d2a679;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+}
+@media (max-width: 600px) {
+    .photos {
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo {
+        width: 90%;
+        max-width: 200px;
+    }
+}
